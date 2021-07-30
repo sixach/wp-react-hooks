@@ -1,0 +1,15 @@
+**/node_modules/**
+coverage
+cypress
+node_modules
+*.sublime-project
+*.sublime-workspace
+*.php
+.DS_Store
+.ftppass
+*.cache
+.vscode/*
+docs/*
+sftp.json.github/
+readme.txt
+.idea
