@@ -9,13 +9,13 @@
 		"functions",
 		"react"
 	],
-	"homepage": "https://github.com/sixach/wp-block-components#readme",
+	"homepage": "https://github.com/sixach/wp-react-hooks#readme",
 	"bugs": {
-		"url": "https://github.com/sixach/wp-block-components/issues"
+		"url": "https://github.com/sixach/wp-react-hooks/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/sixach/wp-block-components.git"
+		"url": "git+https://github.com/sixach/wp-react-hooks.git"
 	},
 	"license": "GPL-3.0-or-later",
 	"author": "sixa AG",
