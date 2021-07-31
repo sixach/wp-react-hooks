@@ -15,7 +15,7 @@ import { useState, useCallback } from '@wordpress/element';
  * @return     {Array}                      Returns a stateful value, and a function to update it.
  * @example
  *
- * const [ isEditing, setIsEditing ] = useToggle();
+ * const [ isEditing, toggleIsEditing ] = useToggle();
  */
 function useToggle( initialState = false ) {
 	// Initialize the state
