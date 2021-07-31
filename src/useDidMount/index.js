@@ -1,4 +1,11 @@
 /**
+ * Utility for libraries from the `Lodash`.
+ *
+ * @ignore
+ */
+import isFunction from 'lodash/isFunction';
+
+/**
  * WordPress specific abstraction layer atop React.
  *
  * @see    https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/
