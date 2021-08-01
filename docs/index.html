@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>@sixach/wp-react-hooks 1.0.0 | Documentation</title>
+  <title>@sixach/wp-react-hooks 1.1.0 | Documentation</title>
   <meta name='description' content='A collection of most used React hooks crafted for the sixa projects.'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@sixach/wp-react-hooks</h3>
-          <div class='mb1'><code>1.0.0</code></div>
+          <div class='mb1'><code>1.1.0</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -32,6 +32,36 @@
                   href='#usedidmount'
                   class="">
                   useDidMount
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#usedidupdate'
+                  class="">
+                  useDidUpdate
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#useinputvalue'
+                  class="">
+                  useInputValue
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#usetimeout'
+                  class="">
+                  useTimeout
                   
                 </a>
                 
@@ -67,7 +97,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/3bd2b5e45a4d009c7f2f9d98af9d1d0c3be5ae22/src/useDidMount/index.js#L29-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useDidMount/index.js#L29-L35'>
       <span>src/useDidMount/index.js</span>
       </a>
     
@@ -145,12 +175,283 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='usedidupdate'>
+      useDidUpdate
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useDidUpdate/index.js#L25-L35'>
+      <span>src/useDidUpdate/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This hook mimicks the <code>componentDidUpdate</code> hook for React.
+Fires a callback on component update, and can take in a list of
+conditions to fire callback when one of the conditions changes.</p>
+
+    <div class='pre p1 fill-light mt0'>useDidUpdate(callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>, conditions: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>): void</div>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 1.1.0</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    Function to be called when component is updated.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>conditions</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+	    The list of variables which trigger update when they are changed.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>void</code>:
+        
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'>useDidUpdate( <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log( <span class="hljs-string">&#x27;Updated!&#x27;</span> );
+}, [ var1, var2 ] );</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='useinputvalue'>
+      useInputValue
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useInputValue/index.js#L22-L29'>
+      <span>src/useInputValue/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This hook takes an initial value for an input field
+and updates it when the <code>onChange</code> event raises.</p>
+
+    <div class='pre p1 fill-light mt0'>useInputValue(initialValue: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 1.1.0</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>initialValue</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    Initial value of the field.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></code>:
+        Returns a stateful value, and a function to update it.
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> [ value, setValue ] = useInputValue( <span class="hljs-string">&#x27;Hello&#x27;</span> );
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">TextControl</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">{</span> <span class="hljs-attr">setValue</span> } <span class="hljs-attr">value</span>=<span class="hljs-string">{</span> <span class="hljs-attr">value</span> } /&gt;</span></span></pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='usetimeout'>
+      useTimeout
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useTimeout/index.js#L23-L55'>
+      <span>src/useTimeout/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>A setTimeout hook that calls a callback after a timeout duration.</p>
+
+    <div class='pre p1 fill-light mt0'>useTimeout(callback: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>, timeoutDelayMs: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 1.1.0</div>
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    The callback to be invoked after timeout.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>timeoutDelayMs</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    Amount of time in ms after which to invoke.
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>:
+        Current state of the timer and methods to start and stop the timer.
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> [ isBusy, toggleIsBusy ] = useToggle( <span class="hljs-literal">true</span> );
+<span class="hljs-keyword">const</span> { start } = useTimeout( toggleIsBusy, <span class="hljs-number">2000</span> );
+start();</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='usetoggle'>
       useToggle
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/3bd2b5e45a4d009c7f2f9d98af9d1d0c3be5ae22/src/useToggle/index.js#L20-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useToggle/index.js#L20-L29'>
       <span>src/useToggle/index.js</span>
       </a>
     
