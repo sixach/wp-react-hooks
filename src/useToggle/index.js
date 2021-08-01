@@ -4,36 +4,28 @@
  * @see    https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/
  * @ignore
  */
-import { useReducer } from '@wordpress/element';
+import { useState, useCallback } from '@wordpress/element';
 
 /**
- * Reducer dispatch that takes a parameter with value true or false and toggles that value to opposite.
- *
- * @ignore
- */
-const defaultToggleFunction = ( value ) => ! Boolean( value );
-
-/**
- * This hook takes a parameter with value and allows for quickly toggling the value.
+ * This hook takes a parameter with value true or false and toggles that value to opposite.
  *
  * @function
- * @since      1.1.0
- * @param  	   {any|boolean}    initialValue      Initial value of the toggle.
- * @param  	   {Function}       toggleFunction    A toggle function. This allows for non boolean toggles.
- * @return     {Array}                        	  Returns a stateful value, and a function to update it.
+ * @since      1.0.0
+ * @param  	   {boolean}    initialState    Post content.
+ * @return     {Array}                      Returns a stateful value, and a function to update it.
  * @example
  *
- * const [ value1, toggleValue1 ] = useToggle();
- * const [ value2, toggleValue2 ] = useToggle( true );
- * const [ value3, toggleValue3 ] = useToggle( 'start', customToggleFunction );
+ * const [ isEditing, toggleIsEditing ] = useToggle();
  */
-function useToggle( initialValue, toggleFunction ) {
-	return useReducer( toggleFunction || defaultToggleFunction, initialValue );
-}
+function useToggle( initialState = false ) {
+	// Initialize the state
+	const [ state, setState ] = useState( Boolean( initialState ) );
 
-useToggle.defaultProps = {
-	initialValue: false,
-	toggleFunction: defaultToggleFunction,
-};
+	// Define and memorize toggler function in case we pass down the component,
+	// This function change the boolean value to it's opposite value
+	const toggle = useCallback( () => setState( ( currentState ) => ! currentState ), [] );
+
+	return [ Boolean( state ), toggle ];
+}
 
 export default useToggle;
