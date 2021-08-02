@@ -97,7 +97,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useDidMount/index.js#L29-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/857021c1952011864cbd45ac5de605e629614d5f/src/useDidMount/index.js#L29-L35'>
       <span>src/useDidMount/index.js</span>
       </a>
     
@@ -180,7 +180,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useDidUpdate/index.js#L25-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/857021c1952011864cbd45ac5de605e629614d5f/src/useDidUpdate/index.js#L25-L35'>
       <span>src/useDidUpdate/index.js</span>
       </a>
     
@@ -274,7 +274,7 @@ conditions to fire callback when one of the conditions changes.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useInputValue/index.js#L22-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/857021c1952011864cbd45ac5de605e629614d5f/src/useInputValue/index.js#L22-L29'>
       <span>src/useInputValue/index.js</span>
       </a>
     
@@ -358,7 +358,7 @@ and updates it when the <code>onChange</code> event raises.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useTimeout/index.js#L23-L55'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/857021c1952011864cbd45ac5de605e629614d5f/src/useTimeout/index.js#L23-L55'>
       <span>src/useTimeout/index.js</span>
       </a>
     
@@ -451,16 +451,16 @@ start();</pre>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/0ebc3d4c8da34d0c44ef8ff164a39465febbc0f8/src/useToggle/index.js#L20-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/857021c1952011864cbd45ac5de605e629614d5f/src/useToggle/index.js#L30-L32'>
       <span>src/useToggle/index.js</span>
       </a>
     
   </div>
   
 
-  <p>This hook takes a parameter with value true or false and toggles that value to opposite.</p>
+  <p>This hook takes a parameter with value and allows for quickly toggling the value.</p>
 
-    <div class='pre p1 fill-light mt0'>useToggle(initialState: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
+    <div class='pre p1 fill-light mt0'>useToggle(initialValue: (any | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>), toggleFunction: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></div>
   
   
 
@@ -469,7 +469,7 @@ start();</pre>
   
   
   
-  <div>Since: 1.0.0</div>
+  <div>Since: 1.1.0</div>
 
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
@@ -477,9 +477,17 @@ start();</pre>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>initialState</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>
-            = <code>false</code>)</code>
-	    Post content.
+            <span class='code bold'>initialValue</span> <code class='quiet'>((any | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>))</code>
+	    Initial value of the toggle.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>toggleFunction</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    A toggle function. This allows for non boolean toggles.
 
           </div>
           
@@ -508,7 +516,9 @@ start();</pre>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> [ isEditing, toggleIsEditing ] = useToggle();</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> [ value1, toggleValue1 ] = useToggle();
+<span class="hljs-keyword">const</span> [ value2, toggleValue2 ] = useToggle( <span class="hljs-literal">true</span> );
+<span class="hljs-keyword">const</span> [ value3, toggleValue3 ] = useToggle( <span class="hljs-string">&#x27;start&#x27;</span>, customToggleFunction );</pre>
     
   
 
