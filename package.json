@@ -1,6 +1,6 @@
 {
 	"name": "@sixach/wp-react-hooks",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"gutenberg",
@@ -56,8 +56,5 @@
 		"husky": "^7.0.1",
 		"lint-staged": "11.1.2",
 		"lodash": "4.17.21"
-	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
 	}
 }
