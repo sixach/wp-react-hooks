@@ -32,17 +32,13 @@
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
 		"prepublishOnly": "npm run format && npm run build",
-		"docs": "documentation build src/** -f html --github -o docs"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
+		"docs": "documentation build src/** -f html --github -o docs",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{js,ts,tsx}": [
 			"npm run lint:js",
-			"npm run format:js"
+			"npm run format"
 		]
 	},
 	"dependencies": {
