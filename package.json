@@ -1,6 +1,6 @@
 {
-	"name": "@sixach/wp-react-hooks",
-	"version": "1.1.0",
+	"name": "@sixa/wp-react-hooks",
+	"version": "1.1.1",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"gutenberg",
@@ -32,17 +32,13 @@
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
 		"prepublishOnly": "npm run format && npm run build",
-		"docs": "documentation build src/** -f html --github -o docs"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
+		"docs": "documentation build src/** -f html --github -o docs",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{js,ts,tsx}": [
 			"npm run lint:js",
-			"npm run format:js"
+			"npm run format"
 		]
 	},
 	"dependencies": {
@@ -62,6 +58,6 @@
 		"lodash": "4.17.21"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"access": "public"
 	}
 }
