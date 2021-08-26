@@ -1,6 +1,6 @@
 {
 	"name": "@sixa/wp-react-hooks",
-	"version": "1.1.1",
+	"version": "1.2.0",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"gutenberg",
@@ -42,14 +42,19 @@
 		]
 	},
 	"dependencies": {
-		"@wordpress/element": "^4.0.0"
+		"@wordpress/api-fetch": "^5.2.1",
+		"@wordpress/element": "^4.0.0",
+		"@wordpress/i18n": "^4.2.1",
+		"@wordpress/url": "^3.2.1",
+		"use-deep-compare-effect": "^1.6.1"
 	},
 	"devDependencies": {
 		"@babel/cli": "7.14.8",
 		"@babel/core": "7.15.0",
 		"@babel/preset-env": "7.15.0",
 		"@babel/preset-react": "7.14.5",
-		"@wordpress/scripts": "17.1.0",
+		"@sixach/wp-block-utils": "^1.0.2",
+		"@wordpress/scripts": "^18.0.0",
 		"babel-loader": "8.2.2",
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
