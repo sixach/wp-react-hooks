@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>@sixa/wp-react-hooks 1.2.0 | Documentation</title>
+  <title>@sixa/wp-react-hooks 1.2.1 | Documentation</title>
   <meta name='description' content='A collection of most used React hooks crafted for the sixa projects.'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
       <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
         <div class='py1 px2'>
           <h3 class='mb0 no-anchor'>@sixa/wp-react-hooks</h3>
-          <div class='mb1'><code>1.2.0</code></div>
+          <div class='mb1'><code>1.2.1</code></div>
           <input
             placeholder='Filter'
             id='filter-input'
@@ -42,6 +42,16 @@
                   href='#usedidupdate'
                   class="">
                   useDidUpdate
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#usetoast'
+                  class="">
+                  useToast
                   
                 </a>
                 
@@ -127,7 +137,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useDidMount/index.js#L29-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useDidMount/index.js#L29-L35'>
       <span>src/useDidMount/index.js</span>
       </a>
     
@@ -210,7 +220,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useDidUpdate/index.js#L25-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useDidUpdate/index.js#L25-L35'>
       <span>src/useDidUpdate/index.js</span>
       </a>
     
@@ -299,12 +309,81 @@ conditions to fire callback when one of the conditions changes.</p>
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='usetoast'>
+      useToast
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useToast/index.js#L21-L26'>
+      <span>src/useToast/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Generates custom (notification) toast messages.</p>
+
+    <div class='pre p1 fill-light mt0'>useToast(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  <div>Since: 1.2.1</div>
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a></code>:
+        A function that could be called to initiate toast messages.
+
+      
+    
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> toast = useToast();
+toast( <span class="hljs-string">&#x27;Text to display as a toast message!&#x27;</span> );</pre>
+    
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='usegetposts'>
       useGetPosts
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useGetPosts/index.js#L54-L72'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useGetPosts/index.js#L60-L79'>
       <span>src/useGetPosts/index.js</span>
       </a>
     
@@ -314,7 +393,7 @@ conditions to fire callback when one of the conditions changes.</p>
   <p>Retrieve list of post-type posts and maintain refreshing
 this list when any of the direct arguments changed.</p>
 
-    <div class='pre p1 fill-light mt0'>useGetPosts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, clientId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, postType: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, toast: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+    <div class='pre p1 fill-light mt0'>useGetPosts(args: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, clientId: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, postType: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -356,15 +435,6 @@ this list when any of the direct arguments changed.</p>
           
         </div>
       
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>toast</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    Creates a notification toast.
-
-          </div>
-          
-        </div>
-      
     </div>
   
 
@@ -388,7 +458,7 @@ this list when any of the direct arguments changed.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> { postsOptions, postsQuery } = useGetPosts( { <span class="hljs-attr">order</span>: <span class="hljs-string">&#x27;asc&#x27;</span> }, clientId, <span class="hljs-string">&#x27;posts&#x27;</span>, toast );</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> { postsOptions, postsQuery } = useGetPosts( { <span class="hljs-attr">order</span>: <span class="hljs-string">&#x27;asc&#x27;</span> }, clientId, <span class="hljs-string">&#x27;posts&#x27;</span> );</pre>
     
   
 
@@ -414,7 +484,7 @@ this list when any of the direct arguments changed.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useGetTerms/index.js#L51-L69'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useGetTerms/index.js#L57-L76'>
       <span>src/useGetTerms/index.js</span>
       </a>
     
@@ -424,7 +494,7 @@ this list when any of the direct arguments changed.</p>
   <p>Retrieve list of taxonomy terms only invoked
 immediately after the Edit component is mounted.</p>
 
-    <div class='pre p1 fill-light mt0'>useGetTerms(taxonomy: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, toast: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
+    <div class='pre p1 fill-light mt0'>useGetTerms(taxonomy: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></div>
   
   
 
@@ -443,15 +513,6 @@ immediately after the Edit component is mounted.</p>
           <div>
             <span class='code bold'>taxonomy</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
 	    Taxonomy name.
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>toast</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    Creates a notification toast.
 
           </div>
           
@@ -480,7 +541,7 @@ immediately after the Edit component is mounted.</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> { termsOptions, termsQuery } = useGetTerms( <span class="hljs-string">&#x27;categories&#x27;</span>, toast );</pre>
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> { termsOptions, termsQuery } = useGetTerms( <span class="hljs-string">&#x27;categories&#x27;</span> );</pre>
     
   
 
@@ -506,7 +567,7 @@ immediately after the Edit component is mounted.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useInputValue/index.js#L22-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useInputValue/index.js#L22-L29'>
       <span>src/useInputValue/index.js</span>
       </a>
     
@@ -590,7 +651,7 @@ and updates it when the <code>onChange</code> event raises.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/usePreparePosts/index.js#L37-L48'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/usePreparePosts/index.js#L37-L48'>
       <span>src/usePreparePosts/index.js</span>
       </a>
     
@@ -695,7 +756,7 @@ and slices the query according to the maximum limit determined.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useTimeout/index.js#L23-L55'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useTimeout/index.js#L23-L55'>
       <span>src/useTimeout/index.js</span>
       </a>
     
@@ -788,7 +849,7 @@ start();</pre>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e2fc2e86e29364e94a75bcf562e3059f27da1e23/src/useToggle/index.js#L30-L32'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/sixach/wp-react-hooks/blob/e25c6ec1fff253ab8da6b37bd5c9a0edf3465668/src/useToggle/index.js#L30-L32'>
       <span>src/useToggle/index.js</span>
       </a>
     
