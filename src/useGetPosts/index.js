@@ -3,7 +3,7 @@
  *
  * @ignore
  */
-import { selectOptions } from '@sixach/wp-block-utils';
+import { selectOptions } from '@sixa/wp-block-utils';
 
 /**
  * Retrieves the translation of text.

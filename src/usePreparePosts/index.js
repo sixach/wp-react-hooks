@@ -10,7 +10,7 @@ import { find, map, slice } from 'lodash';
  *
  * @ignore
  */
-import { isNonEmptyArray } from '@sixach/wp-block-utils';
+import { isNonEmptyArray } from '@sixa/wp-block-utils';
 
 /**
  * WordPress specific abstraction layer atop React.
