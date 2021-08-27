@@ -1,6 +1,6 @@
 {
 	"name": "@sixa/wp-react-hooks",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"gutenberg",
@@ -43,6 +43,7 @@
 	},
 	"dependencies": {
 		"@wordpress/api-fetch": "^5.2.1",
+		"@wordpress/data": "^6.0.1",
 		"@wordpress/element": "^4.0.0",
 		"@wordpress/i18n": "^4.2.1",
 		"@wordpress/url": "^3.2.1",
