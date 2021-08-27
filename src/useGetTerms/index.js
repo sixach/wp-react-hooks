@@ -22,11 +22,18 @@ import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
 /**
- * Helper React hooks specific for Sixa projects.
+ * Function to be called when component is mounted.
  *
  * @ignore
  */
 import useDidMount from '../useDidMount';
+
+/**
+ * Generate toast messages.
+ *
+ * @ignore
+ */
+import useToast from '../useToast';
 
 /**
  * API connection interface for setting and receiveing API key.
@@ -41,16 +48,16 @@ import { apiClient } from '../utils';
  *
  * @function
  * @since      1.2.0
- * @param      {string}      taxonomy    Taxonomy name.
- * @param      {Function}    toast    	 Creates a notification toast.
- * @return     {Object} 			  	 List of terms retrieved from the API along with a list of options to select from.
+ * @param      {string}    taxonomy    Taxonomy name.
+ * @return     {Object} 			   List of terms retrieved from the API along with a list of options to select from.
  * @example
  *
- * const { termsOptions, termsQuery } = useGetTerms( 'categories', toast );
+ * const { termsOptions, termsQuery } = useGetTerms( 'categories' );
  */
-function useGetTerms( taxonomy, toast ) {
+function useGetTerms( taxonomy ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
+	const toast = useToast();
 
 	useDidMount( () => {
 		apiClient

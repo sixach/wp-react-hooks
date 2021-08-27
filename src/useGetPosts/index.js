@@ -30,6 +30,13 @@ import { useState } from '@wordpress/element';
 import useDeepCompareEffect from 'use-deep-compare-effect';
 
 /**
+ * Generate toast messages.
+ *
+ * @ignore
+ */
+import useToast from '../useToast';
+
+/**
  * API connection interface for setting and receiveing API key.
  *
  * @ignore
@@ -42,18 +49,18 @@ import { apiClient } from '../utils';
  *
  * @function
  * @since      1.2.0
- * @param      {Object}      args    	 Arguments to be passed to the apiFetch method.
- * @param      {string}      clientId    The block’s client id.
- * @param      {string}      postType    Post type name.
- * @param      {Function}    toast    	 Creates a notification toast.
- * @return     {Object} 			  	 List of posts retrieved from the API along with a list of options to select from.
+ * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
+ * @param      {string}    clientId    The block’s client id.
+ * @param      {string}    postType    Post type name.
+ * @return     {Object} 			   List of posts retrieved from the API along with a list of options to select from.
  * @example
  *
- * const { postsOptions, postsQuery } = useGetPosts( { order: 'asc' }, clientId, 'posts', toast );
+ * const { postsOptions, postsQuery } = useGetPosts( { order: 'asc' }, clientId, 'posts' );
  */
-function useGetPosts( args, clientId, postType, toast ) {
+function useGetPosts( args, clientId, postType ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
+	const toast = useToast();
 
 	useDeepCompareEffect( () => {
 		apiClient
