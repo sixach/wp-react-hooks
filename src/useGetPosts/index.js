@@ -57,14 +57,14 @@ import { apiClient } from '../utils';
  *
  * const { postsOptions, postsQuery } = useGetPosts( { order: 'asc' }, clientId, 'posts' );
  */
-function useGetPosts( args, clientId, postType ) {
+function useGetPosts( args = {}, clientId, postType ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
 	const toast = useToast();
 
 	useDeepCompareEffect( () => {
 		apiClient
-			.get( postType, args )
+			.get( `/wp/v2/${ postType }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( selectOptions( data, { id: 'value', 'title.rendered': 'label' }, [] ) );
 				setQuery( data );

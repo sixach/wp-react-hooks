@@ -49,19 +49,20 @@ import { apiClient } from '../utils';
  * @function
  * @since      1.2.0
  * @param      {string}    taxonomy    Taxonomy name.
+ * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
  * @return     {Object} 			   List of terms retrieved from the API along with a list of options to select from.
  * @example
  *
  * const { termsOptions, termsQuery } = useGetTerms( 'categories' );
  */
-function useGetTerms( taxonomy ) {
+function useGetTerms( taxonomy, args = {} ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
 	const toast = useToast();
 
 	useDidMount( () => {
 		apiClient
-			.get( taxonomy )
+			.get( `/wp/v2/${ taxonomy }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( map( data, ( term ) => pick( term, [ 'id', 'name', 'parent' ] ) ) );
 				setQuery( data );
