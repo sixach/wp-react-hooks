@@ -19,12 +19,13 @@ import { addQueryArgs } from '@wordpress/url';
  * Retrieves posts and terms via API.
  *
  * @ignore
- * @param     {string}     endpoint    API endpoint.
- * @param     {Object}     args    	   Arguments to be passed along with the request.
- * @return    {Promise}    			   A promise representing the request processed via the registered middlewares.
+ * @since      1.2.2
+ * @param      {string}     endpoint    API endpoint.
+ * @param      {Object}     args    	Arguments to be passed along with the request.
+ * @return     {Promise}    			A promise representing the request processed via the registered middlewares.
  */
-async function get( endpoint, args = {} ) {
-	return await apiFetch( { path: addQueryArgs( `/wp/v2/${ endpoint }`, { per_page: -1, post_status: 'publish', ...args } ), method: 'GET' } );
+function get( endpoint, args = {} ) {
+	return apiFetch( { method: 'GET', path: addQueryArgs( endpoint, args ) } );
 }
 
 export default { get };
