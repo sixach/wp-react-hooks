@@ -19,7 +19,7 @@ import { addQueryArgs } from '@wordpress/url';
  * Retrieves posts and terms via API.
  *
  * @ignore
- * @since      1.2.2
+ * @since      1.3.0
  * @param      {string}     endpoint    API endpoint.
  * @param      {Object}     args    	Arguments to be passed along with the request.
  * @return     {Promise}    			A promise representing the request processed via the registered middlewares.

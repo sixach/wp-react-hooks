@@ -32,7 +32,7 @@ import useDidMount from '../useDidMount';
  * Get latitude & longitude from address.
  *
  * @function
- * @since      1.2.2
+ * @since      1.3.0
  * @param 	   {string}          address    Address.
  * @param      {string}          apiKey     GoogleMaps API key.
  * @param      {string}          locale 	Region and language code of the parsed address.

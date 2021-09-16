@@ -17,7 +17,7 @@ import { useState } from '@wordpress/element';
  * Maintains and determines the current state of the active tab.
  *
  * @function
- * @since      1.2.2
+ * @since      1.3.0
  * @param 	   {string}    initialTabName    Initial tab element to be selected upon mounting of component.
  * @param 	   {Array}     tabs              Tabs stored from the previous state.
  * @return     {Array}                       Returns a stateful value, and a function to update it.

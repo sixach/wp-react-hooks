@@ -39,7 +39,7 @@ import { apiClient } from '../utils';
  * Retrieve list of HTML nodes genearted for each post item.
  *
  * @function
- * @since      1.2.2
+ * @since      1.3.0
  * @param      {string}    nodeEndpoint    API node endpoint.
  * @return     {Array}                     List of HTML nodes to be referred to when each post item looped over.
  * @example

@@ -10,7 +10,7 @@ import { useRef } from '@wordpress/element';
  * Conditionally return an instance of `useRef`.
  *
  * @function
- * @since      1.2.2
+ * @since      1.3.0
  * @param 	   {boolean}    isSave    	    Whether the field is meant to be rendered on the front-end.
  * @param 	   {any}        initialValue    Initial value used during the initial render.
  * @return     {Object}					    Returns a mutable ref object whose `.current` property is initialized to the passed argument.
