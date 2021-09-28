@@ -36,6 +36,13 @@ import useDidMount from '../useDidMount';
 import useToast from '../useToast';
 
 /**
+ * Toggling the value of the state.
+ *
+ * @ignore
+ */
+import useToggle from '../useToggle';
+
+/**
  * API connection interface for setting and receiveing API key.
  *
  * @ignore
@@ -47,7 +54,7 @@ import { apiClient } from '../utils';
  * immediately after the Edit component is mounted.
  *
  * @function
- * @since      1.2.0
+ * @since      1.4.0
  * @param      {string}    taxonomy    Taxonomy name.
  * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
  * @return     {Object} 			   List of terms retrieved from the API along with a list of options to select from.
@@ -58,22 +65,26 @@ import { apiClient } from '../utils';
 function useGetTerms( taxonomy, args = {} ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
+	const [ loading, setLoading ] = useToggle();
 	const toast = useToast();
 
 	useDidMount( () => {
+		setLoading();
 		apiClient
 			.get( `/wp/v2/${ taxonomy }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( map( data, ( term ) => pick( term, [ 'id', 'name', 'parent' ] ) ) );
 				setQuery( data );
+				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
+				setLoading();
 				toast( __( 'Error: Couldn’t retrieve taxonomy terms via API.', 'sixa' ), 'error' );
 			} );
 	} );
 
-	return { termsOptions: options, termsQuery: query };
+	return { isLoading: loading, termsOptions: options, termsQuery: query };
 }
 
 export default useGetTerms;

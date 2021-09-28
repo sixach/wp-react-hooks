@@ -36,6 +36,13 @@ import useDidMount from '../useDidMount';
 import useToast from '../useToast';
 
 /**
+ * Toggling the value of the state.
+ *
+ * @ignore
+ */
+import useToggle from '../useToggle';
+
+/**
  * API connection interface for setting and receiveing API key.
  *
  * @ignore
@@ -58,22 +65,26 @@ import { apiClient } from '../utils';
 function useGetProductTerms( taxonomy, args = {} ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
+	const [ loading, setLoading ] = useToggle();
 	const toast = useToast();
 
 	useDidMount( () => {
+		setLoading();
 		apiClient
 			.get( `/wc/v3/products/${ taxonomy }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( map( data, ( term ) => pick( term, [ 'id', 'name', 'parent' ] ) ) );
 				setQuery( data );
+				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
+				setLoading();
 				toast( __( 'Error: Couldn’t retrieve taxonomy terms via API.', 'sixa' ), 'error' );
 			} );
 	} );
 
-	return { termsOptions: options, termsQuery: query };
+	return { isLoading: loading, termsOptions: options, termsQuery: query };
 }
 
 export default useGetProductTerms;

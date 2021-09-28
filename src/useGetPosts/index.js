@@ -37,6 +37,13 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import useToast from '../useToast';
 
 /**
+ * Toggling the value of the state.
+ *
+ * @ignore
+ */
+import useToggle from '../useToggle';
+
+/**
  * API connection interface for setting and receiveing API key.
  *
  * @ignore
@@ -48,7 +55,7 @@ import { apiClient } from '../utils';
  * this list when any of the direct arguments changed.
  *
  * @function
- * @since      1.2.0
+ * @since      1.4.0
  * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
  * @param      {string}    clientId    The block’s client id.
  * @param      {string}    postType    Post type name.
@@ -60,22 +67,26 @@ import { apiClient } from '../utils';
 function useGetPosts( args = {}, clientId, postType ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
+	const [ loading, setLoading ] = useToggle();
 	const toast = useToast();
 
 	useDeepCompareEffect( () => {
+		setLoading();
 		apiClient
 			.get( `/wp/v2/${ postType }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( selectOptions( data, { id: 'value', 'title.rendered': 'label' }, [] ) );
 				setQuery( data );
+				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
+				setLoading();
 				toast( __( 'Error: Couldn’t retrieve posts via API.', 'sixa' ), 'error' );
 			} );
 	}, [ args, clientId ] );
 
-	return { postsOptions: options, postsQuery: query };
+	return { isLoading: loading, postsOptions: options, postsQuery: query };
 }
 
 export default useGetPosts;
