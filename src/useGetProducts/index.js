@@ -51,20 +51,19 @@ import useToggle from '../useToggle';
 import { apiClient } from '../utils';
 
 /**
- * Retrieve list of post-type posts and maintain refreshing
+ * Retrieve list of product posts and maintain refreshing
  * this list when any of the direct arguments changed.
  *
  * @function
  * @since      1.4.0
  * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
  * @param      {string}    clientId    The block’s client id.
- * @param      {string}    postType    Post type name.
  * @return     {Object} 			   List of posts retrieved from the API along with a list of options to select from.
  * @example
  *
- * const { postsOptions, postsQuery } = useGetPosts( { order: 'asc' }, clientId, 'posts' );
+ * const { productsOptions, productsQuery } = useGetProducts( { order: 'asc' }, clientId );
  */
-function useGetPosts( args = {}, clientId, postType ) {
+function useGetProducts( args = {}, clientId ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
 	const [ loading, setLoading ] = useToggle();
@@ -73,20 +72,20 @@ function useGetPosts( args = {}, clientId, postType ) {
 	useDeepCompareEffect( () => {
 		setLoading();
 		apiClient
-			.get( `/wp/v2/${ postType }`, { per_page: -1, post_status: 'publish', ...args } )
+			.get( '/wc/v3/products', { per_page: -1, status: 'publish', ...args } )
 			.then( ( data ) => {
-				setOptions( selectOptions( data, { id: 'value', 'title.rendered': 'label' }, [] ) );
+				setOptions( selectOptions( data, { id: 'value', name: 'label' }, [] ) );
 				setQuery( data );
 				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
 				setLoading();
-				toast( __( 'Error: Couldn’t retrieve posts via API.', 'sixa' ), 'error' );
+				toast( __( 'Error: Couldn’t retrieve products via API.', 'sixa' ), 'error' );
 			} );
 	}, [ args, clientId ] );
 
-	return { isLoading: loading, postsOptions: options, postsQuery: query };
+	return { isLoading: loading, productsOptions: options, productsQuery: query };
 }
 
-export default useGetPosts;
+export default useGetProducts;

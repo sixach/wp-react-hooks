@@ -1,9 +1,9 @@
 /**
- * Utility helper methods specific for Sixa projects.
+ * Utility for libraries from the `Lodash`.
  *
  * @ignore
  */
-import { selectOptions } from '@sixa/wp-block-utils';
+import { map, pick } from 'lodash';
 
 /**
  * Retrieves the translation of text.
@@ -22,12 +22,11 @@ import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
 /**
- * React hook to make deep comparison on the inputs, not reference equality.
+ * Function to be called when component is mounted.
  *
- * @see    https://github.com/kentcdodds/use-deep-compare-effect
  * @ignore
  */
-import useDeepCompareEffect from 'use-deep-compare-effect';
+import useDidMount from '../useDidMount';
 
 /**
  * Generate toast messages.
@@ -51,42 +50,41 @@ import useToggle from '../useToggle';
 import { apiClient } from '../utils';
 
 /**
- * Retrieve list of post-type posts and maintain refreshing
- * this list when any of the direct arguments changed.
+ * Retrieve list of product taxonomy terms only invoked
+ * immediately after the Edit component is mounted.
  *
  * @function
  * @since      1.4.0
+ * @param      {string}    taxonomy    Taxonomy name.
  * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
- * @param      {string}    clientId    The block’s client id.
- * @param      {string}    postType    Post type name.
- * @return     {Object} 			   List of posts retrieved from the API along with a list of options to select from.
+ * @return     {Object} 			   List of terms retrieved from the API along with a list of options to select from.
  * @example
  *
- * const { postsOptions, postsQuery } = useGetPosts( { order: 'asc' }, clientId, 'posts' );
+ * const { termsOptions, termsQuery } = useGetTerms( 'categories' );
  */
-function useGetPosts( args = {}, clientId, postType ) {
+function useGetProductTerms( taxonomy, args = {} ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
 	const [ loading, setLoading ] = useToggle();
 	const toast = useToast();
 
-	useDeepCompareEffect( () => {
+	useDidMount( () => {
 		setLoading();
 		apiClient
-			.get( `/wp/v2/${ postType }`, { per_page: -1, post_status: 'publish', ...args } )
+			.get( `/wc/v3/products/${ taxonomy }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
-				setOptions( selectOptions( data, { id: 'value', 'title.rendered': 'label' }, [] ) );
+				setOptions( map( data, ( term ) => pick( term, [ 'id', 'name', 'parent' ] ) ) );
 				setQuery( data );
 				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
 				setLoading();
-				toast( __( 'Error: Couldn’t retrieve posts via API.', 'sixa' ), 'error' );
+				toast( __( 'Error: Couldn’t retrieve taxonomy terms via API.', 'sixa' ), 'error' );
 			} );
-	}, [ args, clientId ] );
+	} );
 
-	return { isLoading: loading, postsOptions: options, postsQuery: query };
+	return { isLoading: loading, termsOptions: options, termsQuery: query };
 }
 
-export default useGetPosts;
+export default useGetProductTerms;
