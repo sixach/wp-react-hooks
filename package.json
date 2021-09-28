@@ -48,10 +48,10 @@
 		"@wordpress/i18n": "^4.2.2",
 		"@wordpress/url": "^3.2.2",
 		"react-geocode": "^0.2.3",
-		"use-deep-compare-effect": "^1.6.1"
+		"use-deep-compare-effect": "^1.8.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.15.4",
+		"@babel/cli": "^7.15.7",
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",
 		"@babel/preset-react": "7.14.5",
