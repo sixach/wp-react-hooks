@@ -42,27 +42,27 @@
 		]
 	},
 	"dependencies": {
+		"@sixa/wp-block-utils": "^1.0.4",
 		"@wordpress/api-fetch": "^5.2.2",
 		"@wordpress/data": "^6.1.0",
 		"@wordpress/element": "^4.0.1",
 		"@wordpress/i18n": "^4.2.2",
 		"@wordpress/url": "^3.2.2",
 		"react-geocode": "^0.2.3",
-		"use-deep-compare-effect": "^1.6.1"
+		"use-deep-compare-effect": "^1.6.1",
+		"lodash": "4.17.21"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.15.4",
 		"@babel/core": "^7.15.5",
 		"@babel/preset-env": "^7.15.6",
 		"@babel/preset-react": "7.14.5",
-		"@sixa/wp-block-utils": "1.0.4-beta.0",
 		"@wordpress/scripts": "^18.0.1",
 		"babel-loader": "8.2.2",
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
 		"husky": "^7.0.2",
-		"lint-staged": "11.1.2",
-		"lodash": "4.17.21"
+		"lint-staged": "11.1.2"
 	},
 	"publishConfig": {
 		"access": "public"
