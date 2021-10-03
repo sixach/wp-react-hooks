@@ -37,6 +37,13 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import useToast from '../useToast';
 
 /**
+ * Toggling the value of the state.
+ *
+ * @ignore
+ */
+import useToggle from '../useToggle';
+
+/**
  * API connection interface for setting and receiveing API key.
  *
  * @ignore
@@ -59,22 +66,26 @@ import { apiClient } from '../utils';
 function useGetProducts( args = {}, clientId ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
+	const [ loading, setLoading ] = useToggle();
 	const toast = useToast();
 
 	useDeepCompareEffect( () => {
+		setLoading();
 		apiClient
 			.get( '/wc/v3/products', { per_page: -1, status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( selectOptions( data, { id: 'value', name: 'label' }, [] ) );
 				setQuery( data );
+				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
+				setLoading();
 				toast( __( 'Error: Couldn’t retrieve products via API.', 'sixa' ), 'error' );
 			} );
 	}, [ args, clientId ] );
 
-	return { productsOptions: options, productsQuery: query };
+	return { isLoading: loading, productsOptions: options, productsQuery: query };
 }
 
 export default useGetProducts;
