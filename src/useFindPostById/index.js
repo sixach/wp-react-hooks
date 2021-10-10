@@ -24,9 +24,9 @@ import { useEffect, useState } from '@wordpress/element';
  * @return     {null|Object}                  Post object.
  * @example
  *
- * const post = useFindPost( postsQuery, postId );
+ * const post = useFindPostById( postsQuery, postId );
  */
-function useFindPost( postId, postsQuery ) {
+function useFindPostById( postId, postsQuery ) {
 	const [ post, setPost ] = useState( null );
 
 	useEffect( () => {
@@ -36,4 +36,4 @@ function useFindPost( postId, postsQuery ) {
 	return post;
 }
 
-export default useFindPost;
+export default useFindPostById;
