@@ -9,6 +9,7 @@ export { default as useGetProductTerms } from './useGetProductTerms';
 export { default as useGetTerms } from './useGetTerms';
 export { default as useInputValue } from './useInputValue';
 export { default as useLatLngBounds } from './useLatLngBounds';
+export { default as useNormalizeJsonify } from './useNormalizeJsonify';
 export { default as usePreparePosts } from './usePreparePosts';
 export { default as useTimeout } from './useTimeout';
 export { default as useToast } from './useToast';
