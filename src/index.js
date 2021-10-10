@@ -2,6 +2,7 @@ export { default as useActiveTab } from './useActiveTab';
 export { default as useConditionalRef } from './useConditionalRef';
 export { default as useDidMount } from './useDidMount';
 export { default as useDidUpdate } from './useDidUpdate';
+export { default as useFindPostById } from './useFindPostById';
 export { default as useGetNodeList } from './useGetNodeList';
 export { default as useGetPosts } from './useGetPosts';
 export { default as useGetProducts } from './useGetProducts';

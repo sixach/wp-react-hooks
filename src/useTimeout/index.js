@@ -20,7 +20,7 @@ import { useCallback, useEffect, useRef, useState } from '@wordpress/element';
  * const { start } = useTimeout( toggleIsBusy, 2000 );
  * start();
  */
-function useTimeout( callback, timeoutDelayMs ) {
+function useTimeout( callback, timeoutDelayMs = 1000 ) {
 	const [ isTimeoutActive, setIsTimeoutActive ] = useState( false );
 	const savedRefCallback = useRef();
 
@@ -53,10 +53,5 @@ function useTimeout( callback, timeoutDelayMs ) {
 
 	return { isActive: isTimeoutActive, start, stop: clear };
 }
-
-useTimeout.defaultProps = {
-	callback: () => any,
-	timeoutDelayMs: 1000,
-};
 
 export default useTimeout;

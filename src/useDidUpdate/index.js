@@ -22,7 +22,7 @@ import { useEffect, useRef } from '@wordpress/element';
  *     console.log( 'Updated!' );
  * }, [ var1, var2 ] );
  */
-function useDidUpdate( callback, conditions ) {
+function useDidUpdate( callback, conditions = [] ) {
 	const hasMountedRef = useRef( false );
 
 	useEffect( () => {
@@ -33,10 +33,5 @@ function useDidUpdate( callback, conditions ) {
 		}
 	}, conditions );
 }
-
-useDidUpdate.defaultProps = {
-	callback: () => any,
-	conditions: [],
-};
 
 export default useDidUpdate;
