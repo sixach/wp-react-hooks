@@ -28,7 +28,7 @@ import { useMemo } from '@wordpress/element';
  * @since       1.2.0
  * @param       {Array}     ids      Handpicked post ids.
  * @param       {number}    limit    Maximum number of posts to show.
- * @param       {Array}     query    List of all published posts under the `Testimonials` post-type.
+ * @param       {Array}     query    List of posts retrieved from the API query.
  * @return      {Object} 			 Sliced query, maximum number of available posts, and whether there are posts to loop over.
  * @example
  *
