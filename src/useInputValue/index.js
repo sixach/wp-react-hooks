@@ -19,7 +19,7 @@ import { useCallback, useState } from '@wordpress/element';
  * const [ value, setValue ] = useInputValue( 'Hello' );
  * <TextControl onChange={ setValue } value={ value } />
  */
-function useInputValue( initialValue ) {
+function useInputValue( initialValue = '' ) {
 	const [ value, setValue ] = useState( initialValue );
 	const onChange = useCallback( ( event ) => {
 		setValue( event?.currentTarget?.value || event );
@@ -27,9 +27,5 @@ function useInputValue( initialValue ) {
 
 	return [ value, onChange ];
 }
-
-useInputValue.defaultProps = {
-	initialValue: '',
-};
 
 export default useInputValue;

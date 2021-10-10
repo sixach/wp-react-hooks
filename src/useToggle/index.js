@@ -27,13 +27,8 @@ const defaultToggleFunction = ( value ) => ! Boolean( value );
  * const [ value2, toggleValue2 ] = useToggle( true );
  * const [ value3, toggleValue3 ] = useToggle( 'start', customToggleFunction );
  */
-function useToggle( initialValue, toggleFunction ) {
+function useToggle( initialValue = false, toggleFunction ) {
 	return useReducer( toggleFunction || defaultToggleFunction, initialValue );
 }
-
-useToggle.defaultProps = {
-	initialValue: false,
-	toggleFunction: defaultToggleFunction,
-};
 
 export default useToggle;
