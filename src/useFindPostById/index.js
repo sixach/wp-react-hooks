@@ -24,7 +24,7 @@ import { useEffect, useState } from '@wordpress/element';
  * @return     {null|Object}                  Post object.
  * @example
  *
- * const post = useFindPostById( postsQuery, postId );
+ * const post = useFindPostById( postId, postsQuery );
  */
 function useFindPostById( postId, postsQuery ) {
 	const [ post, setPost ] = useState( null );
