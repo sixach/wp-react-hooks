@@ -15,3 +15,4 @@ export { default as usePreparePosts } from './usePreparePosts';
 export { default as useTimeout } from './useTimeout';
 export { default as useToast } from './useToast';
 export { default as useToggle } from './useToggle';
+export { default as useVisibilityClassNames } from './useVisibilityClassNames';
