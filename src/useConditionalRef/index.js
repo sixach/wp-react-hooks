@@ -25,6 +25,8 @@ function useConditionalRef( isSave = false, initialValue ) {
 	 *
 	 * The save parameter can only accept a JavaScript function rather than
 	 * a React component, making any hook invalid by throwing a fatal compilation error.
+	 *
+	 * @ignore
 	 */
 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
