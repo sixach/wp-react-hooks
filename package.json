@@ -1,6 +1,6 @@
 {
 	"name": "@sixa/wp-react-hooks",
-	"version": "1.5.0",
+	"version": "1.6.0",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"sixa",
@@ -44,11 +44,11 @@
 	},
 	"dependencies": {
 		"@sixa/wp-block-utils": "^1.0.4",
-		"@wordpress/api-fetch": "^5.2.2",
-		"@wordpress/data": "^6.1.0",
-		"@wordpress/element": "^4.0.1",
-		"@wordpress/i18n": "^4.2.2",
-		"@wordpress/url": "^3.2.2",
+		"@wordpress/api-fetch": "^5.2.3",
+		"@wordpress/data": "^6.1.1",
+		"@wordpress/element": "^4.0.2",
+		"@wordpress/i18n": "^4.2.3",
+		"@wordpress/url": "^3.2.3",
 		"lodash": "4.17.21",
 		"react-geocode": "^0.2.3",
 		"use-deep-compare-effect": "^1.8.0"
@@ -58,12 +58,13 @@
 		"@babel/core": "^7.15.8",
 		"@babel/preset-env": "^7.15.8",
 		"@babel/preset-react": "7.14.5",
-		"@wordpress/scripts": "^18.0.1",
+		"@wordpress/scripts": "^18.1.0",
 		"babel-loader": "8.2.2",
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
 		"husky": "^7.0.2",
-		"lint-staged": "^11.2.0"
+		"lint-staged": "^11.2.0",
+		"prettier": "npm:wp-prettier@^2.2.1-beta-1"
 	},
 	"publishConfig": {
 		"access": "public"
