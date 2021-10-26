@@ -63,7 +63,7 @@
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
 		"husky": "^7.0.2",
-		"lint-staged": "^11.2.0",
+		"lint-staged": "11.2.6",
 		"prettier": "npm:wp-prettier@^2.2.1-beta-1"
 	},
 	"publishConfig": {
