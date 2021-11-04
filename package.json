@@ -1,6 +1,6 @@
 {
 	"name": "@sixa/wp-react-hooks",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"sixa",
@@ -44,27 +44,26 @@
 	},
 	"dependencies": {
 		"@sixa/wp-block-utils": "^1.0.4",
-		"@wordpress/api-fetch": "^5.2.3",
-		"@wordpress/data": "^6.1.1",
-		"@wordpress/element": "^4.0.2",
+		"@wordpress/api-fetch": "^5.2.4",
+		"@wordpress/data": "^6.1.2",
+		"@wordpress/element": "^4.0.3",
 		"@wordpress/i18n": "^4.2.3",
 		"@wordpress/url": "^3.2.3",
 		"lodash": "4.17.21",
 		"react-geocode": "^0.2.3",
-		"use-deep-compare-effect": "^1.8.0"
+		"use-deep-compare-effect": "^1.8.1"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.15.7",
-		"@babel/core": "^7.15.8",
-		"@babel/preset-env": "^7.15.8",
-		"@babel/preset-react": "7.14.5",
-		"@wordpress/scripts": "^18.1.0",
-		"babel-loader": "8.2.2",
+		"@babel/cli": "^7.16.0",
+		"@babel/core": "^7.16.0",
+		"@babel/preset-env": "^7.16.0",
+		"@babel/preset-react": "^7.16.0",
+		"@wordpress/scripts": "^19.0.0",
+		"babel-loader": "^8.2.3",
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
-		"husky": "^7.0.2",
-		"lint-staged": "^11.2.0",
-		"prettier": "npm:wp-prettier@^2.2.1-beta-1"
+		"husky": "^7.0.4",
+		"lint-staged": "^11.2.6"
 	},
 	"publishConfig": {
 		"access": "public"
