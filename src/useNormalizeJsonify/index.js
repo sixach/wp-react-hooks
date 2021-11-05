@@ -25,3 +25,12 @@ function useNormalizeJsonify( value = '[""]' ) {
 }
 
 export default useNormalizeJsonify;
+
+/**
+ * Allow this hook to be called within a save function as well.
+ * This is purely added to avoid `eslint` error since Gutenberg
+ * cannot process a React component for the Save output.
+ *
+ * @ignore
+ */
+useNormalizeJsonify.save = useNormalizeJsonify;

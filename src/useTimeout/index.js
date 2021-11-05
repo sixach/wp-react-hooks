@@ -29,6 +29,7 @@ function useTimeout( callback, timeoutDelayMs = 1000 ) {
 	}, [ callback ] );
 
 	const timeoutCallback = () => {
+		/* eslint-disable-next-line no-unused-expressions */
 		savedRefCallback.current && savedRefCallback.current();
 		clear();
 	};
