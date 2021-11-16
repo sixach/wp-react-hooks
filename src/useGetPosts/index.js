@@ -55,7 +55,7 @@ import { apiClient } from '../utils';
  * this list when any of the direct arguments changed.
  *
  * @function
- * @since      1.4.0
+ * @since      1.6.2
  * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
  * @param      {string}    clientId    The block’s client id.
  * @param      {string}    postType    Post type name.
@@ -84,7 +84,7 @@ function useGetPosts( args = {}, clientId, postType ) {
 				setLoading();
 				toast( __( 'Error: Couldn’t retrieve posts via API.', 'sixa' ), 'error' );
 			} );
-	}, [ args, clientId ] );
+	}, [ args, clientId, postType ] );
 
 	return { isLoading: loading, postsOptions: options, postsQuery: query };
 }
