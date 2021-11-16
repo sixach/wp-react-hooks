@@ -55,7 +55,7 @@ import { apiClient } from '../utils';
  * this list when any of the direct arguments changed.
  *
  * @function
- * @since      1.4.1
+ * @since      1.6.2
  * @param      {string}    taxonomy    Taxonomy name.
  * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
  * @return     {Object} 			   List of terms retrieved from the API along with a list of options to select from.
@@ -83,7 +83,7 @@ function useGetTerms( taxonomy, args = {} ) {
 				setLoading();
 				toast( __( 'Error: Couldn’t retrieve taxonomy terms via API.', 'sixa' ), 'error' );
 			} );
-	}, [ args ] );
+	}, [ args, taxonomy ] );
 
 	return { isLoading: loading, termsOptions: options, termsQuery: query };
 }

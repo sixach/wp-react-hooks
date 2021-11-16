@@ -9,17 +9,18 @@ import { __ } from '@wordpress/i18n';
 /**
  * WordPress specific abstraction layer atop React.
  *
- * @see    https://github.com/WordPress/gutenberg/tree/HEAD/packages/element/README.md
+ * @see    https://developer.wordpress.org/block-editor/reference-guides/packages/packages-element/
  * @ignore
  */
 import { useState } from '@wordpress/element';
 
 /**
- * Function to be called when component is mounted.
+ * React hook to make deep comparison on the inputs, not reference equality.
  *
+ * @see    https://github.com/kentcdodds/use-deep-compare-effect
  * @ignore
  */
-import useDidMount from '../useDidMount';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 /**
  * Generate toast messages.
@@ -39,20 +40,21 @@ import { apiClient } from '../utils';
  * Retrieve list of HTML nodes genearted for each post item.
  *
  * @function
- * @since      1.3.0
- * @param      {string}    nodeEndpoint    API node endpoint.
- * @return     {Array}                     List of HTML nodes to be referred to when each post item looped over.
+ * @since      1.6.2
+ * @param      {string}    endpoint    API node endpoint.
+ * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
+ * @return     {Array}                 List of HTML nodes to be referred to when each post item looped over.
  * @example
  *
  * const nodeList = useGetNodeList( 'sixa-recent-posts-block/v1/nodes' );
  */
-function useGetNodeList( nodeEndpoint ) {
+function useGetNodeList( endpoint, args = {} ) {
 	const [ nodeList, setNodeList ] = useState( '' );
 	const toast = useToast();
 
-	useDidMount( () => {
+	useDeepCompareEffect( () => {
 		apiClient
-			.get( nodeEndpoint )
+			.get( endpoint, args )
 			.then( ( data ) => {
 				setNodeList( data );
 			} )
@@ -60,7 +62,7 @@ function useGetNodeList( nodeEndpoint ) {
 				setNodeList( [] );
 				toast( __( 'Error: Couldn’t retrieve HTML node list via API.', 'sixa' ), 'error' );
 			} );
-	} );
+	}, [ args, endpoint ] );
 
 	return nodeList;
 }
