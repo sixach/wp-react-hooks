@@ -14,11 +14,12 @@ import { identity, map, pickBy } from 'lodash';
 import { useState } from '@wordpress/element';
 
 /**
- * Function to be called when component is updated.
+ * React hook to make deep comparison on the inputs, not reference equality.
  *
+ * @see    https://github.com/kentcdodds/use-deep-compare-effect
  * @ignore
  */
-import useDidUpdate from '../useDidUpdate';
+import useDeepCompareEffect from 'use-deep-compare-effect';
 
 /**
  * Generates CSS class names for activated viewports.
@@ -36,7 +37,7 @@ const getVisibilityClassNames = ( { prefix = 'sixa-hide-', ...viewports } ) =>
  * and returns a list of visibility (breakpoint) CSS class names.
  *
  * @function
- * @since      1.6.0
+ * @since      1.6.3
  * @param  	   {Object}    viewports    An object of breakpoints with their state of visibility being defined.
  * @return     {Array}                  Returns a list of visibility CSS class names.
  * @example
@@ -48,7 +49,7 @@ const getVisibilityClassNames = ( { prefix = 'sixa-hide-', ...viewports } ) =>
 function useVisibilityClassNames( viewports ) {
 	const [ classNames, setClassNames ] = useState( () => getVisibilityClassNames( viewports ) );
 
-	useDidUpdate( () => {
+	useDeepCompareEffect( () => {
 		setClassNames( getVisibilityClassNames( viewports ) );
 	}, [ viewports ] );
 
