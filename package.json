@@ -1,6 +1,6 @@
 {
 	"name": "@sixa/wp-react-hooks",
-	"version": "1.6.3",
+	"version": "1.7.0",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"sixa",
@@ -58,7 +58,7 @@
 		"@babel/core": "7.16.0",
 		"@babel/preset-env": "7.16.4",
 		"@babel/preset-react": "7.16.0",
-		"@wordpress/scripts": "19.2.2",
+		"@wordpress/scripts": "^19.2.2",
 		"babel-loader": "8.2.3",
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
