@@ -1,4 +1,5 @@
 export { default as useActiveTab } from './useActiveTab';
+export { default as useColumnsProps } from './useColumnsProps';
 export { default as useConditionalRef } from './useConditionalRef';
 export { default as useDidMount } from './useDidMount';
 export { default as useDidUpdate } from './useDidUpdate';
