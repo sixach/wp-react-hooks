@@ -55,9 +55,9 @@
 	},
 	"devDependencies": {
 		"@babel/cli": "7.16.0",
-		"@babel/core": "7.16.0",
-		"@babel/preset-env": "7.16.4",
-		"@babel/preset-react": "7.16.0",
+		"@babel/core": "7.16.5",
+		"@babel/preset-env": "7.16.5",
+		"@babel/preset-react": "7.16.5",
 		"@wordpress/scripts": "19.2.2",
 		"babel-loader": "8.2.3",
 		"cross-env": "7.0.3",
