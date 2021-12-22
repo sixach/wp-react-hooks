@@ -45,7 +45,7 @@
 	"dependencies": {
 		"@sixa/wp-block-utils": "1.1.0",
 		"@wordpress/api-fetch": "5.2.6",
-		"@wordpress/data": "6.1.4",
+		"@wordpress/data": "6.1.5",
 		"@wordpress/element": "4.0.4",
 		"@wordpress/i18n": "4.2.4",
 		"@wordpress/url": "3.3.1",
