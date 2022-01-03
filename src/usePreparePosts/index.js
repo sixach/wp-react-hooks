@@ -3,7 +3,7 @@
  *
  * @ignore
  */
-import { find, map, slice } from 'lodash';
+import {filter, includes, slice} from 'lodash';
 
 /**
  * Utility helper methods specific for Sixa projects.
@@ -39,7 +39,7 @@ function usePreparePosts( ids = [], limit = 3, query ) {
 		() => ( {
 			havePosts: isNonEmptyArray( query ),
 			maxLimit: query?.length,
-			slicedQuery: isNonEmptyArray( ids ) ? map( ids, ( id ) => find( query, [ 'id', id ] ) ) : slice( query, 0, limit ),
+			slicedQuery: isNonEmptyArray( ids ) && isNonEmptyArray( query )? filter( query, ( { id } ) => includes( ids, id ) ) : slice( query, 0, limit ),
 		} ),
 		[ ids, limit, query ]
 	);
