@@ -67,23 +67,21 @@ import { apiClient } from '../utils';
 function useGetPosts( args = {}, clientId, postType ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
-	const [ loading, setLoading ] = useToggle();
+	const [ loading, setLoading ] = useToggle( true );
 	const toast = useToast();
 
 	useDeepCompareEffect( () => {
-		setLoading();
 		apiClient
 			.get( `/wp/v2/${ postType }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( selectOptions( data, { id: 'value', 'title.rendered': 'label' }, [] ) );
 				setQuery( data );
-				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
-				setLoading();
 				toast( __( 'Error: Couldn’t retrieve posts via API.', 'sixa' ), 'error' );
-			} );
+			} )
+			.finally( setLoading );
 	}, [ args, clientId, postType ] );
 
 	return { isLoading: loading, postsOptions: options, postsQuery: query };
