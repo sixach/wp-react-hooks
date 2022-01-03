@@ -66,7 +66,7 @@ import { apiClient } from '../utils';
  */
 function useGetPosts( args = {}, clientId, postType ) {
 	const [ options, setOptions ] = useState( [] );
-	const [ query, setQuery ] = useState( '' );
+	const [ query, setQuery ] = useState( [] );
 	const [ loading, setLoading ] = useToggle( true );
 	const toast = useToast();
 
