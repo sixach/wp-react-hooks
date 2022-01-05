@@ -3,7 +3,7 @@
  *
  * @ignore
  */
-import { filter, includes, slice } from 'lodash';
+import { slice, forEach, find } from 'lodash';
 
 /**
  * Utility helper methods specific for Sixa projects.
@@ -35,11 +35,21 @@ import { useMemo } from '@wordpress/element';
  * const { havePosts, maxLimit, slicedQuery } = usePreparePosts( [2], 3, [ { id: 1, title: 'Post A' }, { id: 2, title: 'Post B' } ] );
  */
 function usePreparePosts( ids = [], limit = 3, query ) {
+	const filterExisting = ( values, collection ) => {
+		const existing = [];
+		forEach( values, ( value ) => {
+			const match = find( collection, [ 'id', value ] );
+			if ( Boolean( match ) ) {
+				existing.push( match );
+			}
+		} );
+		return existing;
+	};
 	const { havePosts, maxLimit, slicedQuery } = useMemo(
 		() => ( {
 			havePosts: isNonEmptyArray( query ),
 			maxLimit: query?.length,
-			slicedQuery: isNonEmptyArray( ids ) && isNonEmptyArray( query ) ? filter( query, ( { id } ) => includes( ids, id ) ) : slice( query, 0, limit ),
+			slicedQuery: isNonEmptyArray( ids ) && isNonEmptyArray( query ) ? filterExisting( ids, query ) : slice( query, 0, limit ),
 		} ),
 		[ ids, limit, query ]
 	);
