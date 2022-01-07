@@ -43,7 +43,7 @@
 		]
 	},
 	"dependencies": {
-		"@sixa/wp-block-utils": "1.1.0",
+		"@sixa/wp-block-utils": "1.2.0",
 		"@wordpress/api-fetch": "5.2.6",
 		"@wordpress/data": "6.1.5",
 		"@wordpress/element": "4.0.4",
