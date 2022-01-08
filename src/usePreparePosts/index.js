@@ -3,14 +3,14 @@
  *
  * @ignore
  */
-import { find, map, slice } from 'lodash';
+import slice from 'lodash/slice';
 
 /**
  * Utility helper methods specific for Sixa projects.
  *
  * @ignore
  */
-import { isNonEmptyArray } from '@sixa/wp-block-utils';
+import { isNonEmptyArray, filterCollectionByValues } from '@sixa/wp-block-utils';
 
 /**
  * WordPress specific abstraction layer atop React.
@@ -25,6 +25,8 @@ import { useMemo } from '@wordpress/element';
  * and slices the query according to the maximum limit determined.
  *
  * @function
+ * @since       1.9.1
+ * 				Avoid returning undefined in case no match was found in the query filtering.
  * @since       1.2.0
  * @param       {Array}     ids      Handpicked post ids.
  * @param       {number}    limit    Maximum number of posts to show.
@@ -39,7 +41,7 @@ function usePreparePosts( ids = [], limit = 3, query ) {
 		() => ( {
 			havePosts: isNonEmptyArray( query ),
 			maxLimit: query?.length,
-			slicedQuery: isNonEmptyArray( ids ) ? map( ids, ( id ) => find( query, [ 'id', id ] ) ) : slice( query, 0, limit ),
+			slicedQuery: isNonEmptyArray( ids ) && isNonEmptyArray( query ) ? filterCollectionByValues( ids, query ) : slice( query, 0, limit ),
 		} ),
 		[ ids, limit, query ]
 	);
