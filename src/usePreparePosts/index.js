@@ -3,7 +3,7 @@
  *
  * @ignore
  */
-import { slice } from 'lodash';
+import slice from 'lodash/slice';
 
 /**
  * Utility helper methods specific for Sixa projects.
@@ -25,6 +25,8 @@ import { useMemo } from '@wordpress/element';
  * and slices the query according to the maximum limit determined.
  *
  * @function
+ * @since       1.9.1
+ * 				Avoid returning undefined in case no match was found in the query filtering.
  * @since       1.2.0
  * @param       {Array}     ids      Handpicked post ids.
  * @param       {number}    limit    Maximum number of posts to show.
