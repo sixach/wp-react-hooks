@@ -10,9 +10,14 @@
 	"packageRules": [
 		{
 			"updateTypes": [ "minor", "patch", "pin", "digest" ],
+			"depTypeList": [ "devDependencies", "dependencies" ],
 			"automerge": true,
 			"requiredStatusChecks": null
+		},
+		{
+			"updateTypes": [ "lockFileMaintenance" ],
+			"automerge": true
 		}
 	],
-  	"rebaseWhen": "conflicted"
+	"rebaseWhen": "conflicted"
 }
