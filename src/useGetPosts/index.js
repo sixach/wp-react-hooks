@@ -37,13 +37,6 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import useToast from '../useToast';
 
 /**
- * Toggling the value of the state.
- *
- * @ignore
- */
-import useToggle from '../useToggle';
-
-/**
  * API connection interface for setting and receiveing API key.
  *
  * @ignore
@@ -67,22 +60,23 @@ import { apiClient } from '../utils';
 function useGetPosts( args = {}, clientId, postType ) {
 	const [ options, setOptions ] = useState( [] );
 	const [ query, setQuery ] = useState( '' );
-	const [ loading, setLoading ] = useToggle();
+	const [ loading, setLoading ] = useState( true );
 	const toast = useToast();
 
 	useDeepCompareEffect( () => {
-		setLoading();
+		setLoading( true );
 		apiClient
 			.get( `/wp/v2/${ postType }`, { per_page: -1, post_status: 'publish', ...args } )
 			.then( ( data ) => {
 				setOptions( selectOptions( data, { id: 'value', 'title.rendered': 'label' }, [] ) );
 				setQuery( data );
-				setLoading();
 			} )
 			.catch( () => {
 				setQuery( [] );
-				setLoading();
 				toast( __( 'Error: Couldn’t retrieve posts via API.', 'sixa' ), 'error' );
+			} )
+			.then( () => {
+				setLoading( false );
 			} );
 	}, [ args, clientId, postType ] );
 
