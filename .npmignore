@@ -63,6 +63,7 @@ docs/
 # .ignore files and development configs
 .editorconfig
 .eslintignore
+.eslintrc.js
 .gitattributes
 .prettierignore
 .prettierrc.js
@@ -72,3 +73,6 @@ package-lock.json
 
 # Source files
 src/
+
+# GitHub configuration
+.github
