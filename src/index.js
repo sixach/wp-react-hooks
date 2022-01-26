@@ -10,6 +10,7 @@ export { default as useGetPosts } from './useGetPosts';
 export { default as useGetProducts } from './useGetProducts';
 export { default as useGetProductTerms } from './useGetProductTerms';
 export { default as useGetTerms } from './useGetTerms';
+export { default as useInnerBlocksProps } from './useInnerBlocksProps';
 export { default as useInputValue } from './useInputValue';
 export { default as useLatLngBounds } from './useLatLngBounds';
 export { default as useNormalizeJsonify } from './useNormalizeJsonify';
