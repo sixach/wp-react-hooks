@@ -1,6 +1,6 @@
 {
 	"name": "@sixa/wp-react-hooks",
-	"version": "1.9.2",
+	"version": "1.10.0",
 	"description": "A collection of most used React hooks crafted for the sixa projects.",
 	"keywords": [
 		"sixa",
@@ -45,6 +45,7 @@
 	"dependencies": {
 		"@sixa/wp-block-utils": "1.2.0",
 		"@wordpress/api-fetch": "5.2.6",
+		"@wordpress/blob": "3.2.2",
 		"@wordpress/block-editor": "8.0.13",
 		"@wordpress/data": "6.1.5",
 		"@wordpress/element": "4.0.4",

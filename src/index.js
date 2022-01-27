@@ -4,6 +4,7 @@ export { default as useConditionalRef } from './useConditionalRef';
 export { default as useDidMount } from './useDidMount';
 export { default as useDidUpdate } from './useDidUpdate';
 export { default as useFindPostById } from './useFindPostById';
+export { default as useGetMediaType } from './useGetMediaType';
 export { default as useGetNodeList } from './useGetNodeList';
 export { default as useGetPostMeta } from './useGetPostMeta';
 export { default as useGetPosts } from './useGetPosts';
