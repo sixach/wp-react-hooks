@@ -47,7 +47,7 @@
 		"@wordpress/api-fetch": "6.0.1",
 		"@wordpress/blob": "3.3.1",
 		"@wordpress/block-editor": "8.1.1",
-		"@wordpress/blocks": "^11.2.1",
+		"@wordpress/blocks": "11.2.1",
 		"@wordpress/data": "6.2.1",
 		"@wordpress/element": "4.1.1",
 		"@wordpress/i18n": "4.3.1",
