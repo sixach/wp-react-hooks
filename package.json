@@ -56,8 +56,8 @@
 		"use-deep-compare-effect": "1.8.1"
 	},
 	"devDependencies": {
-		"@babel/cli": "7.17.0",
-		"@babel/core": "7.17.2",
+		"@babel/cli": "7.17.3",
+		"@babel/core": "7.17.4",
 		"@babel/preset-env": "7.16.11",
 		"@babel/preset-react": "7.16.7",
 		"@wordpress/scripts": "19.2.4",
