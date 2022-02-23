@@ -61,7 +61,7 @@
 		"@babel/core": "7.17.5",
 		"@babel/preset-env": "7.16.11",
 		"@babel/preset-react": "7.16.7",
-		"@wordpress/scripts": "21.0.2",
+		"@wordpress/scripts": "22.0.1",
 		"babel-loader": "8.2.3",
 		"cross-env": "7.0.3",
 		"documentation": "13.2.5",
