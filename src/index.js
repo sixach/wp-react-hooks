@@ -5,6 +5,7 @@ export { default as useDidMount } from './useDidMount';
 export { default as useDidUpdate } from './useDidUpdate';
 export { default as useFindPostById } from './useFindPostById';
 export { default as useGetBlockLayout } from './useGetBlockLayout';
+export { default as useGetCurrentPost } from './useGetCurrentPost';
 export { default as useGetMediaType } from './useGetMediaType';
 export { default as useGetNodeList } from './useGetNodeList';
 export { default as useGetPostMeta } from './useGetPostMeta';
