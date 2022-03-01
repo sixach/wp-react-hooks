@@ -23,9 +23,10 @@ function useGetCurrentPost( postId, postType ) {
 	const { currentPost } = useSelect(
 		( select ) => {
 			const { getEditedEntityRecord } = select( 'core' );
+			const _currentPost = getEditedEntityRecord( 'postType', postType, postId );
 
 			return {
-				currentPost: getEditedEntityRecord( 'postType', postType, postId ),
+				currentPost: _currentPost,
 			};
 		},
 		[ postId, postType ]
