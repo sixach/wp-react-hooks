@@ -18,7 +18,7 @@ import useDidMount from '../useDidMount';
  *
  * @function
  * @since      1.13.0
- * @param  	   {Object}     elementRef    Function to be called when component is updated.
+ * @param  	   {Object}     elementRef    A mutable ref element object whose `.current` property is initialized to the passed argument.
  * @return     {boolean}				  Is dragging within the target element.
  * @example
  *
