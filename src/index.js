@@ -16,6 +16,7 @@ export { default as useGetSiteData } from './useGetSiteData';
 export { default as useGetTerms } from './useGetTerms';
 export { default as useInnerBlocksProps } from './useInnerBlocksProps';
 export { default as useInputValue } from './useInputValue';
+export { default as useIsDraggingWithin } from './useIsDraggingWithin';
 export { default as useLatLngBounds } from './useLatLngBounds';
 export { default as useNormalizeJsonify } from './useNormalizeJsonify';
 export { default as usePostTypeNameRestBase } from './usePostTypeNameRestBase';
