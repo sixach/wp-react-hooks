@@ -1,10 +1,9 @@
 /**
- * Retrieves the translation of text.
+ * Utility for libraries from the `Lodash`.
  *
- * @see    https://developer.wordpress.org/block-editor/packages/packages-i18n/
  * @ignore
  */
-import { __ } from '@wordpress/i18n';
+import { identity, pickBy } from 'lodash';
 
 /**
  * WordPress specific abstraction layer atop React.
@@ -13,6 +12,14 @@ import { __ } from '@wordpress/i18n';
  * @ignore
  */
 import { useState } from '@wordpress/element';
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see    https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ * @ignore
+ */
+import { __ } from '@wordpress/i18n';
 
 /**
  * React hook to make deep comparison on the inputs, not reference equality.
@@ -40,15 +47,16 @@ import { apiClient } from '../utils';
  * Retrieve list of HTML nodes genearted for each post item.
  *
  * @function
- * @since      1.6.2
- * @param      {string}    endpoint    API node endpoint.
- * @param      {Object}    args    	   Arguments to be passed to the apiFetch method.
- * @return     {Array}                 List of HTML nodes to be referred to when each post item looped over.
+ * @since      1.14.0
+ * @param      {string}      endpoint     API node endpoint.
+ * @param      {Object}      args    	  Arguments to be passed to the apiFetch method.
+ * @param      {Function}    predicate    The function invoked per property. The predicate is invoked with two arguments: (value, key).
+ * @return     {Array}                    List of HTML nodes to be referred to when each post item looped over.
  * @example
  *
  * const nodeList = useGetNodeList( 'sixa-recent-posts-block/v1/nodes' );
  */
-function useGetNodeList( endpoint, args = {} ) {
+function useGetNodeList( endpoint, args = {}, predicate = identity ) {
 	const [ nodeList, setNodeList ] = useState( '' );
 	const toast = useToast();
 
@@ -56,7 +64,7 @@ function useGetNodeList( endpoint, args = {} ) {
 		apiClient
 			.get( endpoint, args )
 			.then( ( data ) => {
-				setNodeList( data );
+				setNodeList( pickBy( data, predicate ) );
 			} )
 			.catch( () => {
 				setNodeList( [] );
