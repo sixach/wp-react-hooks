@@ -68,7 +68,7 @@
 		"documentation": "13.2.5",
 		"husky": "7.0.4",
 		"lint-staged": "12.5.0",
-		"prettier": "npm:wp-prettier@2.2.1-beta-1"
+		"prettier": "npm:wp-prettier@2.6.2"
 	},
 	"publishConfig": {
 		"access": "public"
