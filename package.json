@@ -65,7 +65,7 @@
 		"@wordpress/scripts": "22.5.0",
 		"babel-loader": "8.2.5",
 		"cross-env": "7.0.3",
-		"documentation": "13.2.5",
+		"documentation": "14.0.0",
 		"husky": "7.0.4",
 		"lint-staged": "12.5.0",
 		"prettier": "npm:wp-prettier@2.6.2"
